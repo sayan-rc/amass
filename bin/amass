@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+full_path = os.path.dirname(os.path.realpath(__file__))
+script_base_dir = os.path.abspath(os.path.join(full_path, os.path.pardir))
+
+sys.path.insert(0, script_base_dir)
+import amass
+import amass.features
+
+config = amass.AmassConfig()
+config.read("etc/amass.cfg")
+args = [""] if len(sys.argv) == 1 else sys.argv[1:]
+cmd_obj, cmd_args = amass.get_command(args)
+if not cmd_obj:
+	amass.abort("Invalid amass command '%s'" % sys.argv[1])
+cmd_obj.run(config, cmd_args)
+
+sys.exit(0)
+
+

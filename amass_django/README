@@ -1,0 +1,14 @@
+To configure Django in Apache,
+
+1) Install wsgi module for Apache 
+
+$ yum install mod_wsgi
+
+2) Create /var/run/wsgi directory and have it owned by apache
+
+$ mkdir /var/run/wsgi
+$ chown apache /var/run/wsgi/
+
+3) Copy django.conf to /etc/httpd/conf.d
+ 
+$ cp django.conf /etc/httpd/conf.d

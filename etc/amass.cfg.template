@@ -1,0 +1,27 @@
+[amass]
+datadir=/opt/amass/amass-refactor/data
+
+[xsede]
+dbname = xdcdb
+user = ssmallen
+
+[gateway]
+host = mysql2.sdsc.edu
+port = 3312
+user = readonly
+password = xxxx
+database = cipres
+
+[amassdb]
+database = amass_refactor
+user = ssmallen
+password = xxxx
+
+[resources]
+inca_names=sdsc-gordon, sdsc-trestles, sdsc-comet
+xsede_ids=2796, 2792, 2814
+gateway=GORDON, TRESTLES, COMET
+db=gordon, trestles, comet
+
+[inca]
+dir=/home/ssmallen/IncaHistories/
